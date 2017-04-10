@@ -39,13 +39,10 @@ function downloadImageByURL(url, filePath) {
            console.log('Downloading file...');
          })
          .on('end', function () {
-           console.log('complete downloaded to' + filePath);
+           console.log('complete downloaded to ' + filePath);
          })
          .pipe(fs.createWriteStream(filePath)
          )
-
-
-
 }
 
 
@@ -53,8 +50,8 @@ getRepoContributors("jquery", "jquery", function(err, result) {
   console.log("Errors:", err);
   console.log("Result:", result);
   for (var i = 0; i < result.length; i++) {
-    console.log("Avatar_url:", result[i].avatar_url);
-
+    // console.log("Avatar_url:", result[i].avatar_url);
+    // console.log("Avatar_path:", "avatars/" + result[i].login + ".jpg");
+    downloadImageByURL(result[i].avatar_url, "avatars/" + result[i].login + ".jpg")
   }
-  downloadImageByURL("https://avatars2.githubusercontent.com/u/2741?v=3&s=466", "avatars/kvirani.jpg")
 });
