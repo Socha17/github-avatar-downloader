@@ -1,7 +1,7 @@
 var request = require('request');
 var fs = require('fs');
 
-//  U
+//  User Info
 var GITHUB_USER = "Socha17";
 var GITHUB_TOKEN = "9265542cbc5b4a4e32379c67f3d3655d8ed8f793";
 
@@ -21,7 +21,6 @@ function getRepoContributors(repoOwner, repoName, cb) {
       var json = JSON.parse(body)
       cb(null,json)
     });
-
 }
 
 //      function downloads avatars and files them appropriately
@@ -42,13 +41,6 @@ function downloadImageByURL(url, filePath) {
          )
 }
 
-  // calls initial function
-// getRepoContributors("jquery", "jquery", function(err, result) {
-//   for (var i = 0; i < result.length; i++) {
-//       // calls function to start downloading avatars
-//     downloadImageByURL(result[i].avatar_url, "avatars/" + result[i].login + ".jpg")
-//   }
-// });
 
 
 module.exports = {
