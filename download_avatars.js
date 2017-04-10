@@ -1,9 +1,6 @@
+require('dotenv/config');
 var request = require('request');
 var fs = require('fs');
-
-//  User Info
-var GITHUB_USER = "Socha17";
-var GITHUB_TOKEN = "9265542cbc5b4a4e32379c67f3d3655d8ed8f793";
 
 
 console.log('Welcome to the GitHub Avatar Downloader!');
@@ -12,7 +9,7 @@ console.log('Welcome to the GitHub Avatar Downloader!');
 function getRepoContributors(repoOwner, repoName, cb) {
   // ...
     var options = {
-      url: 'https://'+ GITHUB_USER + ':' + GITHUB_TOKEN + '@api.github.com/repos/' + repoOwner + '/' + repoName + '/contributors',
+      url: 'https://'+ process.env.GITHUB_USER + ':' + process.env.GITHUB_TOKEN + '@api.github.com/repos/' + repoOwner + '/' + repoName + '/contributors',
       headers: {'User-Agent': 'request'}
     }
 

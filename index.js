@@ -1,3 +1,5 @@
+require('dotenv/config');
+
 var dlAvatars = require('./download_avatars');
 
 
